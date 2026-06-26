@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { DataContext } from '../Strore/DataProvider'
 
 export const Contact = () => {
+  const {products, array}=useContext(DataContext)
+
+  console.log("Products" , products)
+  console.log("array" , array)
   return (
     <div className='rounded-3xl  p-6 mt-5 bg-gradient-to-br from-teal-50 to-blue-50'>
-      
+       
       <div className='font-semibold text-xl text-center rounded-xl shadow-xl mt-5 px-10 py-10 hover:scale-105 transition bg-teal-100'>
       <h2>📩 Get in Touch</h2>
       <p className='font-thin text-base'>We’d love to hear from you! Whether you have questions about destinations, need travel advice, or want help planning your next adventure, we’re here to make your journey smoother and unforgettable.</p>
@@ -38,8 +43,6 @@ export const Contact = () => {
      </div>
      </div>
      
-     
-
 
 
 </div>

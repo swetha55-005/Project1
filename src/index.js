@@ -4,11 +4,14 @@ import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 import'./style/App.css';
 import'./style/index.css';
+import  DataContext  from './Strore/DataProvider';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
+  <DataContext>
     <App />
+    </DataContext>
     </BrowserRouter>
   
 );

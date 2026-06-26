@@ -39,7 +39,7 @@ export const Home = () => {
       </div>
 <About/>
 <Explore/>
-<Contact/>
+<Contact/>  
     
     </div>
     

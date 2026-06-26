@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Image5 from"./../assests/falls.jpg"
+import { DataContext } from '../Strore/DataProvider'
 export const About = () => {
+  const {Projects}=useContext(DataContext)
+  console.log("projects" , Projects)
   return (
     <div>
       <div className="relative w-full min-h-screen">
@@ -39,7 +42,7 @@ export const About = () => {
    
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-12">
 
-      <div className="p-6 rounded-xl shadow-lg  hover:scale-105 transition">
+      {/* <div className="p-6 rounded-xl shadow-lg  hover:scale-105 transition">
         <h3 className="text-xl font-semibold mb-2"> Curated Destinations</h3>
         <p className="text-gray-900">Handpicked locations for a unique and amazing travel experience.</p>
       </div>
@@ -57,7 +60,20 @@ export const About = () => {
       <div className="p-6 rounded-xl shadow-lg  hover:scale-105 transition">
         <h3 className="text-xl font-semibold mb-2"> Inspiring Visuals</h3>
         <p className="text-gray-900">Stunning images that bring each destination to life.</p>
+      </div> */}
+      {Projects && Projects.length > 0 ? (
+       Projects.map((data , idx)=>(
+               <div key={idx} className="p-6 rounded-xl shadow-lg  hover:scale-105 transition">
+        <h3 className="text-xl font-semibold mb-2">{data?.projectName}</h3>
+        <p className="text-gray-900">{data?.year}</p>
       </div>
+       ))
+      ) : (
+        <div>
+          No Data 
+        </div>
+
+      )}
       </div>
 
     </div>
